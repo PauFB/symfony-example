@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Delete provider{% endblock %}
+
+{% block stylesheets %}
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+{% endblock %}
+{% block javascripts %}
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+{% endblock %}
+
+{% block body %}
+<div class="container">
+    <dl class="dl-horizontal well">
+        <dt>ID</dt><dd>{{ provider.id }}</dd>
+        <dt>Name</dt><dd>{{ provider.name }}</dd>
+        <dt>E-mail</dt><dd>{{ provider.email }}</dd>
+        <dt>Phone number</dt><dd>{{ provider.phone }}</dd>
+        <dt>Type</dt><dd>{{ provider.type }}</dd>
+        <dt>Is active</dt><dd>{{ provider.isActive ? 'Yes' : 'No' }}</dd>
+        <dt>Creation date</dt><dd>{{ provider.creationDate | date("d/m/Y", false) }}</dd>
+        <dt>Last updated</dt><dd>{{ provider.lastUpdated | date("d/m/Y", false) }}</dd>
+    </dl>
+    Delete this provider? <br>
+    <a href="{{ path('delete_provider_process', {'id': provider.id}) }}" class = "btn btn-danger">Delete</a>
+    <a class="btn btn-default" href="{{ path('provider_list') }}" role="button">Back</a>
+</div>
+{% endblock %}

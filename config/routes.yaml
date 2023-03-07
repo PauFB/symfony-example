@@ -6,10 +6,18 @@ create_provider:
     path: /create
     controller: App\Controller\CreateProviderController::index
 
-edit_provider_submitted:
-    path: /edit/{id}/submitted
+edit_provider_process:
+    path: /edit/{id}/process
     controller: App\Controller\EditProviderController::editProvider
 
 edit_provider:
     path: /edit/{id}
     controller: App\Controller\EditProviderController::index
+
+delete_provider_process:
+    path: /delete/{id}/process
+    controller: App\Controller\DeleteProviderController::deleteProvider
+
+delete_provider:
+    path: /delete/{id}
+    controller: App\Controller\DeleteProviderController::index

@@ -22,7 +22,7 @@ class EditProviderController extends AbstractController
         $provider = $this->getDoctrine()->getRepository(Provider::class)->find($id);
 
         $form = $this->createFormBuilder($provider)
-            ->setAction($this->generateUrl('edit_provider_submitted', array('id' => $id)))
+            ->setAction($this->generateUrl('edit_provider_process', array('id' => $id)))
             ->setMethod('PUT')
             ->add('id', IntegerType::class, array(
                 'attr' => array(
@@ -59,7 +59,7 @@ class EditProviderController extends AbstractController
         $updatedProvider = new Provider();
 
         $form = $this->createFormBuilder($updatedProvider)
-            ->setAction($this->generateUrl('edit_provider_submitted', array('id' => $id)))
+            ->setAction($this->generateUrl('edit_provider_process', array('id' => $id)))
             ->setMethod('PUT')
             ->add('id', IntegerType::class, array(
                 'attr' => array(

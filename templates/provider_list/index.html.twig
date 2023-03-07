@@ -10,36 +10,35 @@
 {% endblock %}
 
 {% block body %}
-<div>
-    <table class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
-        <thead>
+<table class="table table-striped table-bordered table-sm" cellspacing="0" width="100%">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>E-mail</th>
+            <th>Phone number</th>
+            <th>Provider type</th>
+            <th>Is active</th>
+            <th>Creation date (d/m/y)</th>
+            <th>Last updated (d/m/y)</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for provider in providers %}
             <tr>
-                <th>Name</th>
-                <th>E-mail</th>
-                <th>Phone number</th>
-                <th>Provider type</th>
-                <th>Is active</th>
-                <th>Creation date (d/m/y)</th>
-                <th>Last updated (d/m/y)</th>
-                <th>Actions</th>
+                <td style="vertical-align: middle;">{{ provider.name }}</td>
+                <td style="vertical-align: middle;">{{ provider.email }}</td>
+                <td style="vertical-align: middle;">{{ provider.phone }}</td>
+                <td style="vertical-align: middle;">{{ provider.type }}</td>
+                <td style="vertical-align: middle;">{{ provider.isActive ? 'Yes' : 'No' }}</td>
+                <td style="vertical-align: middle;">{{ provider.creationDate | date("d/m/Y", false) }}</td>
+                <td style="vertical-align: middle;">{{ provider.lastUpdated | date("d/m/Y", false) }}</td>
+                <td style="vertical-align: middle;">
+                    <a href="{{ path('edit_provider', {'id': provider.id}) }}" class = "btn btn-primary">Edit</a>
+                    <a href="{{ path('delete_provider', {'id': provider.id}) }}" class = "btn btn-danger">Delete</a>
+                </td>
             </tr>
-        </thead>
-        <tbody>
-            {% for provider in providers %}
-                <tr>
-                    <td style="vertical-align: middle;">{{ provider.name }}</td>
-                    <td style="vertical-align: middle;">{{ provider.email }}</td>
-                    <td style="vertical-align: middle;">{{ provider.phone }}</td>
-                    <td style="vertical-align: middle;">{{ provider.type }}</td>
-                    <td style="vertical-align: middle;">{{ provider.isActive ? 'Yes' : 'No' }}</td>
-                    <td style="vertical-align: middle;">{{ provider.creationDate | date("d/m/Y", false) }}</td>
-                    <td style="vertical-align: middle;">{{ provider.lastUpdated | date("d/m/Y", false) }}</td>
-                    <td style="vertical-align: middle;">
-                        <a href="{{ path('edit_provider', {'id': provider.id}) }}" class = "btn btn-primary">Edit</a>
-                    </td>
-                </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-</div>
+        {% endfor %}
+    </tbody>
+</table>
 {% endblock %}
