@@ -8,9 +8,6 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class ProviderController extends AbstractController
 {
-    /**
-     * @Route("/provider", name="app_provider")
-     */
     public function index(): Response
     {
         return $this->render('provider/index.html.twig', [

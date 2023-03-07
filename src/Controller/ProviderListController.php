@@ -10,9 +10,6 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class ProviderListController extends AbstractController
 {
-    /**
-     * @Route("/", name="app_provider_list")
-     */
     public function index(): Response
     {
         $repository = $this->getDoctrine()->getRepository(Provider::class);

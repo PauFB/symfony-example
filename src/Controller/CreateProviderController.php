@@ -8,14 +8,10 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class CreateProviderController extends AbstractController
 {
-    /**
-     * @Route("/create/provider", name="app_create_provider")
-     */
     public function index(): Response
     {
-        /*return $this->render('create_provider/index.html.twig', [
+        return $this->render('create_provider/index.html.twig', [
             'controller_name' => 'CreateProviderController',
-        ]);*/
-        return $this->render('create_provider/index.html.twig');
+        ]);
     }
 }

@@ -49,12 +49,12 @@ class Provider
     /**
      * @ORM\Column(type="datetime")
      */
-    private $creation_date;
+    private $creationDate;
 
     /**
      * @ORM\Column(type="datetime")
      */
-    private $last_updated;
+    private $lastUpdated;
 
     public function getId(): ?int
     {
@@ -127,24 +127,24 @@ class Provider
 
     public function getCreationDate(): ?\DateTimeInterface
     {
-        return $this->creation_date;
+        return $this->creationDate;
     }
 
-    public function setCreationDate(\DateTimeInterface $creation_date): self
+    public function setCreationDate(\DateTimeInterface $creationDate): self
     {
-        $this->creation_date = $creation_date;
+        $this->creationDate = $creationDate;
 
         return $this;
     }
 
     public function getLastUpdated(): ?\DateTimeInterface
     {
-        return $this->last_updated;
+        return $this->lastUpdated;
     }
 
-    public function setLastUpdated(\DateTimeInterface $last_updated): self
+    public function setLastUpdated(\DateTimeInterface $lastUpdated): self
     {
-        $this->last_updated = $last_updated;
+        $this->lastUpdated = $lastUpdated;
 
         return $this;
     }
