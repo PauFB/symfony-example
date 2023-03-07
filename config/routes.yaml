@@ -6,6 +6,10 @@ create_provider:
     path: /create
     controller: App\Controller\CreateProviderController::index
 
+edit_provider_submitted:
+    path: /edit/{id}/submitted
+    controller: App\Controller\EditProviderController::editProvider
+
 edit_provider:
     path: /edit/{id}
     controller: App\Controller\EditProviderController::index

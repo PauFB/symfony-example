@@ -10,46 +10,13 @@
 {% endblock %}
 
 {% block body %}
-
-<div>
-    <form>
-        <div class="form-group">
-            <label>ID</label>
-            <input type="text" id="id" class="form-control" value="{{ provider.id }}" readonly>
-        </div>
-        <div class="form-group">
-            <label>Name</label>
-            <input type="text" id="name" class="form-control" value="{{ provider.name }}">
-        </div>
-        <div class="form-group">
-            <label>E-mail</label>
-            <input type="text" id="email" class="form-control" value="{{ provider.email }}">
-        </div>
-        <div class="form-group">
-            <label>Phone number</label>
-            <input type="text" id="phone" class="form-control" value="{{ provider.phone }}">
-        </div>
-        <div class="form-group">
-            <label>Provider type</label>
-        </div>
-        <div class="form-group">
-            <label>Is active</label>
-            <select id="isActive">
-                <option value="" disabled selected hidden>-</option>
-                <option value="true">Yes</option>
-                <option value="false">No</option>
-            </select>
-        </div>
-        <div class="form-group">
-            <label>Creation date</label>
-            <input type="text" id="creationDate" class="form-control" value="{{ provider.creationDate | date("d/m/Y", false) }}" disabled>
-        </div>
-        <div class="form-group">
-            <label>Last updated</label>
-            <input type="text" id="lastUpdated" class="form-control" value="{{ provider.lastUpdated | date("d/m/Y", false) }}" disabled>
-        </div>
-        
-    </form>
-    <a href="{{ path('provider_list') }}">Return</a>
+<div class="container">
+    <div class="span3 well">
+        {{ form(form) }}
+        <a class="btn btn-default" href="{{ path('provider_list') }}" role="button">Back</a>
+    </div>
+    {% if successful_update is defined %}
+        <span class="label {{ successful_update == true ? 'label-success' : 'label-danger' }}">{{ message }}</span>
+    {% endif %}
 </div>
 {% endblock %}

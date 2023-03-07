@@ -27,16 +27,16 @@
         <tbody>
             {% for provider in providers %}
                 <tr>
-                    <td>{{ provider.name }}</td>
-                    <td>{{ provider.email }}</td>
-                    <td>{{ provider.phone }}</td>
-                    <td>{{ provider.type }}</td>
-                    <td>{{ provider.isActive ? 'Yes' : 'No' }}</td>
-                    <td>{{ provider.creationDate | date("d/m/Y", false) }}</td>
-                    <td>{{ provider.lastUpdated | date("d/m/Y", false) }}</td>
-                    <td>
-                        <a href="{{ path('edit_provider', {'id': provider.id}) }}">Edit</a>
-                    </th>
+                    <td style="vertical-align: middle;">{{ provider.name }}</td>
+                    <td style="vertical-align: middle;">{{ provider.email }}</td>
+                    <td style="vertical-align: middle;">{{ provider.phone }}</td>
+                    <td style="vertical-align: middle;">{{ provider.type }}</td>
+                    <td style="vertical-align: middle;">{{ provider.isActive ? 'Yes' : 'No' }}</td>
+                    <td style="vertical-align: middle;">{{ provider.creationDate | date("d/m/Y", false) }}</td>
+                    <td style="vertical-align: middle;">{{ provider.lastUpdated | date("d/m/Y", false) }}</td>
+                    <td style="vertical-align: middle;">
+                        <a href="{{ path('edit_provider', {'id': provider.id}) }}" class = "btn btn-primary">Edit</a>
+                    </td>
                 </tr>
             {% endfor %}
         </tbody>
