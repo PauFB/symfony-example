@@ -1,20 +1,15 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello CreateProviderController!{% endblock %}
+{% block title %}Create provider{% endblock %}
 
 {% block body %}
-<style>
-    .example-wrapper { margin: 1em auto; max-width: 800px; width: 95%; font: 18px/1.5 sans-serif; }
-    .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
-</style>
-
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
-
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ 'C:/symfony-example/src/Controller/CreateProviderController.php'|file_link(0) }}">src/Controller/CreateProviderController.php</a></code></li>
-        <li>Your template at <code><a href="{{ 'C:/symfony-example/templates/create_provider/index.html.twig'|file_link(0) }}">templates/create_provider/index.html.twig</a></code></li>
-    </ul>
+<div class="container">
+    <div class="well">
+        {{ form(form) }}
+        <a class="btn btn-default" href="{{ path('provider_list') }}" role="button">Back</a>
+    </div>
+    {% if successful_creation is defined %}
+        <span class="label {{ successful_creation == true ? 'label-success' : 'label-danger' }}">{{ message }}</span>
+    {% endif %}
 </div>
 {% endblock %}
