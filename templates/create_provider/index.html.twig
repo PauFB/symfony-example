@@ -3,13 +3,24 @@
 {% block title %}Create provider{% endblock %}
 
 {% block body %}
+<style>
+    .col-centered {
+        float: none;
+        margin: 0 auto;
+    }
+</style>
 <div class="container">
-    <div class="well">
-        {{ form(form) }}
-        <a class="btn btn-default" href="{{ path('provider_list') }}" role="button">Back</a>
+    <div class="row">
+        <div class="col-md-6 col-centered">
+            <div class="well">
+                <h2 class="text-center">Create provider</h2>
+                {{ form(form) }}
+                <a class="btn btn-default" href="{{ path('provider_list') }}" role="button">Back</a>
+            </div>
+            {% if successful_creation is defined %}
+                <span class="label {{ successful_creation == true ? 'label-success' : 'label-danger' }}">{{ message }}</span>
+            {% endif %}
+        </div>
     </div>
-    {% if successful_creation is defined %}
-        <span class="label {{ successful_creation == true ? 'label-success' : 'label-danger' }}">{{ message }}</span>
-    {% endif %}
 </div>
 {% endblock %}
