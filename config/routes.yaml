@@ -1,6 +1,6 @@
-provider_list:
+list_provider:
     path: /
-    controller: App\Controller\ProviderListController::index
+    controller: App\Controller\ListProviderController::index
 
 create_provider_process:
     path: /create/process

@@ -17,9 +17,8 @@
                 <dt>Creation date</dt><dd>{{ provider.creationDate | date("d/m/Y", false) }}</dd>
                 <dt>Last updated</dt><dd>{{ provider.lastUpdated | date("d/m/Y", false) }}</dd>
             </dl>
-            Delete this provider? <br>
             <a href="{{ path('delete_provider_process', {'id': provider.id}) }}" class = "btn btn-danger">Delete</a>
-            <a class="btn btn-default" href="{{ path('provider_list') }}" role="button">Back</a>
+            <a class="btn btn-default" href="{{ path('list_provider') }}" role="button">Back</a>
         </div>
     </div>
 </div>

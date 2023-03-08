@@ -9,7 +9,7 @@
             <div class="well">
                 <h2 class="text-center">Create provider</h2>
                 {{ form(form) }}
-                <a class="btn btn-default" href="{{ path('provider_list') }}" role="button">Back</a>
+                <a class="btn btn-default" href="{{ path('list_provider') }}" role="button">Back</a>
             </div>
             {% if successful_creation is defined %}
                 <span class="label {{ successful_creation == true ? 'label-success' : 'label-danger' }}">{{ message }}</span>

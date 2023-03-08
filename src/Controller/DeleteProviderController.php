@@ -30,6 +30,6 @@ class DeleteProviderController extends AbstractController
         $entityManager->remove($provider);
         $entityManager->flush();
 
-        return $this->redirectToRoute('provider_list');
+        return $this->redirectToRoute('list_provider');
     }
 }
