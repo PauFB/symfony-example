@@ -4,12 +4,30 @@
 
 {% block body %}
 <div class="container">
-    <div class="well">
-        {{ form(form) }}
-        <a class="btn btn-default" href="{{ path('provider_list') }}" role="button">Back</a>
+    <div class="row">
+        <div class="col-md-6">
+            <div class="well">
+                <h3 class="text-center">Updated information</h3>
+                {{ form(form) }}
+                <a class="btn btn-default" href="{{ path('provider_list') }}" role="button">Back</a>
+            </div>
+            {% if successful_update is defined %}
+                <span class="label {{ successful_update == true ? 'label-success' : 'label-danger' }}">{{ message }}</span>
+            {% endif %}
+        </div>
+        <div class="col-md-5">
+            <dl class="dl-horizontal well">
+                <h3 class="text-center">Original information</h3>
+                <dt>ID</dt><dd>{{ form.vars.value.id }}</dd>
+                <dt>Name</dt><dd>{{ form.vars.value.name }}</dd>
+                <dt>E-mail</dt><dd>{{ form.vars.value.email }}</dd>
+                <dt>Phone number</dt><dd>{{ form.vars.value.phone }}</dd>
+                <dt>Type</dt><dd>{{ form.vars.value.type }}</dd>
+                <dt>Is active</dt><dd>{{ form.vars.value.isActive ? 'Yes' : 'No' }}</dd>
+                <dt>Creation date</dt><dd>{{ form.vars.value.creationDate | date("d/m/Y", false) }}</dd>
+                <dt>Last updated</dt><dd>{{ form.vars.value.lastUpdated | date("d/m/Y", false) }}</dd>
+            </dl>
+        </div>
     </div>
-    {% if successful_update is defined %}
-        <span class="label {{ successful_update == true ? 'label-success' : 'label-danger' }}">{{ message }}</span>
-    {% endif %}
 </div>
 {% endblock %}
