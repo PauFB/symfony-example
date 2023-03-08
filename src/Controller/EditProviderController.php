@@ -31,7 +31,7 @@ class EditProviderController extends AbstractController
             ))
             ->add('name', TextType::class)
             ->add('email', TextType::class)
-            ->add('phone', TextType::class)
+            ->add('phone', IntegerType::class)
             ->add('type', ChoiceType::class, [
                 'choices' => [
                     'Hotel' => 'hotel',
