@@ -4,18 +4,23 @@
 
 {% block body %}
 <div class="container">
-    <dl class="dl-horizontal well">
-        <dt>ID</dt><dd>{{ provider.id }}</dd>
-        <dt>Name</dt><dd>{{ provider.name }}</dd>
-        <dt>E-mail</dt><dd>{{ provider.email }}</dd>
-        <dt>Phone number</dt><dd>{{ provider.phone }}</dd>
-        <dt>Type</dt><dd>{{ provider.type }}</dd>
-        <dt>Is active</dt><dd>{{ provider.isActive ? 'Yes' : 'No' }}</dd>
-        <dt>Creation date</dt><dd>{{ provider.creationDate | date("d/m/Y", false) }}</dd>
-        <dt>Last updated</dt><dd>{{ provider.lastUpdated | date("d/m/Y", false) }}</dd>
-    </dl>
-    Delete this provider? <br>
-    <a href="{{ path('delete_provider_process', {'id': provider.id}) }}" class = "btn btn-danger">Delete</a>
-    <a class="btn btn-default" href="{{ path('provider_list') }}" role="button">Back</a>
+    <div class="row">
+        <div class="col-md-6 col-centered">
+            <dl class="dl-horizontal well">
+                <h2 class="text-center">Delete provider</h2>
+                <dt>ID</dt><dd>{{ provider.id }}</dd>
+                <dt>Name</dt><dd>{{ provider.name }}</dd>
+                <dt>E-mail</dt><dd>{{ provider.email }}</dd>
+                <dt>Phone number</dt><dd>{{ provider.phone }}</dd>
+                <dt>Type</dt><dd>{{ provider.type }}</dd>
+                <dt>Is active</dt><dd>{{ provider.isActive ? 'Yes' : 'No' }}</dd>
+                <dt>Creation date</dt><dd>{{ provider.creationDate | date("d/m/Y", false) }}</dd>
+                <dt>Last updated</dt><dd>{{ provider.lastUpdated | date("d/m/Y", false) }}</dd>
+            </dl>
+            Delete this provider? <br>
+            <a href="{{ path('delete_provider_process', {'id': provider.id}) }}" class = "btn btn-danger">Delete</a>
+            <a class="btn btn-default" href="{{ path('provider_list') }}" role="button">Back</a>
+        </div>
+    </div>
 </div>
 {% endblock %}
